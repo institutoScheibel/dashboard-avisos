@@ -1,0 +1,48 @@
+========================================
+  DEPLOY NO EASYPANEL - PASSO A PASSO
+========================================
+
+1. ACESSAR O EASYPANEL
+   - Entre no painel do Easypanel (ex: https://seu-servidor:3000)
+   - Faça login
+
+2. CRIAR NOVO APP
+   - Clique em "New" (ou "+")
+   - Selecione "App"
+
+3. CONFIGURAR REPOSITÓRIO GIT
+   - Em "Source", escolha "Git"
+   - URL: https://github.com/institutoScheibel/dashboard-avisos.git
+   - Branch: main
+   - Caminho de Build: /  (raiz - dashboard está na raiz do repo)
+   - Se o repo for privado: configure a chave SSH conforme instruções
+
+4. BUILD
+   - Build method: NixPacks (padrão)
+   - O nixpacks.toml já está configurado no projeto
+
+5. VARIÁVEIS DE AMBIENTE (OBRIGATÓRIO)
+   - Vá em "Environment" ou "Variables"
+   - Adicione:
+     SUPABASE_URL = https://seu-projeto.supabase.co
+     SUPABASE_ANON_KEY = sua-chave-anon-aqui
+   - Essas variáveis geram o config.js no build (sem expor no código)
+
+6. PORTA
+   - Port: 3333
+   - (O app sobe na porta 3333 internamente)
+
+7. DEPLOY
+   - Clique em "Deploy"
+   - Aguarde o build finalizar
+
+8. ACESSAR
+   - O Easypanel vai gerar uma URL (ex: https://dashboard-avisos.seudominio.com)
+   - Ou configure um domínio próprio em "Domains"
+
+========================================
+  OBSERVAÇÕES
+========================================
+- config.js e .env NÃO vão no Git (estão no .gitignore)
+- As credenciais vêm das variáveis de ambiente do Easypanel
+- O script generate-config.js lê process.env no deploy

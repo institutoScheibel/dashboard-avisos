@@ -22,9 +22,10 @@ function loadEnv() {
   return env;
 }
 
-const env = loadEnv();
-const url = (env.SUPABASE_URL || '').trim();
-const key = (env.SUPABASE_ANON_KEY || '').trim();
+const fileEnv = loadEnv();
+// process.env tem prioridade (Easypanel, Docker, etc.)
+const url = (process.env.SUPABASE_URL || fileEnv.SUPABASE_URL || '').trim();
+const key = (process.env.SUPABASE_ANON_KEY || fileEnv.SUPABASE_ANON_KEY || '').trim();
 
 const urlStr = url.startsWith('http') ? JSON.stringify(url) : "''";
 const keyStr = key.length > 10 ? JSON.stringify(key) : "''";

@@ -1,18 +1,16 @@
-# Credenciais e segredos - NUNCA versionar
+# Credenciais - NUNCA versionar
 .env
-dashboard_avisos/.env
-dashboard_avisos/config.js
+config.js
 
 # Dependências
 node_modules/
-dashboard_avisos/node_modules/
+
+# Gerados / build
+logo-base64.txt
+
+# n8n (workflows locais)
+n8n/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Gerados / build
-dashboard_avisos/logo-base64.txt
-
-# n8n (workflows locais)
-n8n/
