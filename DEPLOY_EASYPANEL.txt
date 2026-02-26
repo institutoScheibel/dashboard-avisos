@@ -1,25 +1,26 @@
 ========================================
-  DEPLOY NO EASYPANEL - PASSO A PASSO
+  DEPLOY VIA GITHUB - EASYPANEL
 ========================================
 
 1. ACESSAR O EASYPANEL
-   - Entre no painel do Easypanel (ex: https://seu-servidor:3000)
+   - Entre no painel (ex: https://seu-servidor:3000)
    - Faça login
 
 2. CRIAR NOVO APP
    - Clique em "New" (ou "+")
    - Selecione "App"
 
-3. CONFIGURAR REPOSITÓRIO GIT
-   - Em "Source", escolha "Git"
-   - URL: https://github.com/institutoScheibel/dashboard-avisos.git
-   - Branch: main
-   - Caminho de Build: deixe vazio OU use Dockerfile como método de build
-   - Se o repo for privado: configure a chave SSH conforme instruções
+3. CONFIGURAR GITHUB
+   - Source: Git
+   - Proprietário: institutoScheibel
+   - Repositório: dashboard-avisos
+   - Ramo: main
+   - Caminho de Build: deixe VAZIO (não preencha nada)
+     * O app está na raiz do repo, não precisa de subpasta
 
 4. BUILD
-   - Build method: Dockerfile (recomendado - evita problema de caminho)
-   - OU NixPacks se preferir (nixpacks.toml já configurado)
+   - Build method: NixPacks
+   - O nixpacks.toml no repo já está configurado
 
 5. VARIÁVEIS DE AMBIENTE (OBRIGATÓRIO)
    - Vá em "Environment" ou "Variables"
