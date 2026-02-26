@@ -14,12 +14,12 @@
    - Em "Source", escolha "Git"
    - URL: https://github.com/institutoScheibel/dashboard-avisos.git
    - Branch: main
-   - Caminho de Build: /  (raiz - dashboard está na raiz do repo)
+   - Caminho de Build: deixe vazio OU use Dockerfile como método de build
    - Se o repo for privado: configure a chave SSH conforme instruções
 
 4. BUILD
-   - Build method: NixPacks (padrão)
-   - O nixpacks.toml já está configurado no projeto
+   - Build method: Dockerfile (recomendado - evita problema de caminho)
+   - OU NixPacks se preferir (nixpacks.toml já configurado)
 
 5. VARIÁVEIS DE AMBIENTE (OBRIGATÓRIO)
    - Vá em "Environment" ou "Variables"
