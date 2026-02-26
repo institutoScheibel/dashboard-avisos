@@ -13,3 +13,6 @@ Thumbs.db
 
 # Gerados / build
 dashboard_avisos/logo-base64.txt
+
+# n8n (workflows locais)
+n8n/
