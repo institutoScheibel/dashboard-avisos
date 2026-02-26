@@ -1,0 +1,15 @@
+# Credenciais e segredos - NUNCA versionar
+.env
+dashboard_avisos/.env
+dashboard_avisos/config.js
+
+# Dependências
+node_modules/
+dashboard_avisos/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gerados / build
+dashboard_avisos/logo-base64.txt

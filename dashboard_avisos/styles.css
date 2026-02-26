@@ -1,0 +1,383 @@
+/* Paleta Instituto Scheibel + MUI */
+:root {
+  /* Paleta Instituto Scheibel */
+  --scheibel-light: #C6D2C4;   /* PANTONE 7527 C - beige claro */
+  --scheibel-olive: #454934;   /* PANTONE 7769 C - verde-oliva escuro */
+  --scheibel-taupe: #A9A888;   /* PANTONE 7536 C - verde-acinzentado */
+  --scheibel-dark: #212721;    /* PANTONE BLACK 3 C - preto esverdeado */
+
+  /* Mapeamento para componentes */
+  --mui-primary-main: var(--scheibel-olive);
+  --mui-primary-light: var(--scheibel-taupe);
+  --mui-primary-dark: var(--scheibel-dark);
+  --mui-primary-contrast: var(--scheibel-light);
+  --mui-success-main: var(--scheibel-olive);
+  --mui-success-light: var(--scheibel-taupe);
+  --mui-success-dark: var(--scheibel-dark);
+  --mui-warning-main: var(--scheibel-taupe);
+  --mui-warning-light: var(--scheibel-light);
+  --mui-warning-dark: var(--scheibel-olive);
+  --mui-grey-50: #f8f9f7;
+  --mui-grey-100: var(--scheibel-light);
+  --mui-grey-200: var(--scheibel-taupe);
+  --mui-grey-300: #9a9d82;
+  --mui-grey-400: #8a8d72;
+  --mui-grey-500: #6b6e5a;
+  --mui-grey-600: var(--scheibel-olive);
+  --mui-grey-700: #3a3d2c;
+  --mui-grey-800: #2d3022;
+  --mui-grey-900: var(--scheibel-dark);
+  --mui-text-primary: var(--scheibel-dark);
+  --mui-text-secondary: var(--scheibel-olive);
+  --mui-text-disabled: var(--scheibel-taupe);
+  --mui-divider: rgba(69, 73, 52, 0.2);
+  --mui-background-paper: #fff;
+  --mui-background-default: var(--scheibel-light);
+  --mui-action-hover: rgba(198, 210, 196, 0.8);
+  --mui-action-selected: rgba(169, 168, 136, 0.3);
+
+  /* Shape */
+  --mui-border-radius: 4px;
+
+  /* Spacing (8px base) */
+  --mui-spacing-1: 8px;
+  --mui-spacing-2: 16px;
+  --mui-spacing-3: 24px;
+  --mui-spacing-4: 32px;
+
+  /* Elevation (shadows) */
+  --mui-elevation-0: none;
+  --mui-elevation-1: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --mui-elevation-2: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  --mui-elevation-3: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+
+  /* Typography */
+  --mui-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  --mui-font-size-body1: 1rem;
+  --mui-font-size-body2: 0.875rem;
+  --mui-font-size-caption: 0.75rem;
+  --mui-font-size-h6: 1.25rem;
+  --mui-font-weight-regular: 400;
+  --mui-font-weight-medium: 500;
+  --mui-font-weight-bold: 700;
+
+  /* App bar */
+  --mui-toolbar-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--mui-font-family);
+  font-size: var(--mui-font-size-body1);
+  font-weight: var(--mui-font-weight-regular);
+  color: var(--mui-text-primary);
+  background: var(--scheibel-light);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* App Bar (MUI AppBar style) */
+.header {
+  height: var(--mui-toolbar-height);
+  background: var(--scheibel-dark);
+  color: var(--scheibel-light);
+  box-shadow: var(--mui-elevation-1);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--mui-spacing-3);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--mui-spacing-2);
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.header-logo {
+  max-height: 64px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.header h1 {
+  font-size: var(--mui-font-size-h6);
+  font-weight: var(--mui-font-weight-medium);
+  letter-spacing: 0.0075em;
+}
+
+/* Main content */
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--mui-spacing-3);
+}
+
+/* Paper/Cards (MUI Paper elevation 2) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--mui-spacing-3);
+  margin-bottom: var(--mui-spacing-3);
+}
+
+.stat-card {
+  background: var(--mui-background-paper);
+  border-radius: var(--mui-border-radius);
+  padding: var(--mui-spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--mui-spacing-2);
+  box-shadow: var(--mui-elevation-2);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--mui-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.stat-icon-total {
+  background: var(--scheibel-olive);
+}
+
+.stat-icon-pending {
+  background: var(--scheibel-taupe);
+}
+
+.stat-icon-sent {
+  background: var(--scheibel-dark);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mui-spacing-1);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: var(--mui-font-weight-bold);
+  color: var(--mui-text-primary);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: var(--mui-font-size-body2);
+  color: var(--mui-text-secondary);
+}
+
+/* Filters bar (MUI Paper) */
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--mui-spacing-2);
+  margin-bottom: var(--mui-spacing-3);
+  padding: var(--mui-spacing-2);
+  background: var(--mui-background-paper);
+  border-radius: var(--mui-border-radius);
+  box-shadow: var(--mui-elevation-1);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mui-spacing-1);
+}
+
+.filter-group label {
+  font-size: var(--mui-font-size-caption);
+  font-weight: var(--mui-font-weight-medium);
+  color: var(--mui-text-secondary);
+  letter-spacing: 0.03333em;
+}
+
+.filter-group select {
+  height: 40px;
+  padding: 0 var(--mui-spacing-2);
+  border-radius: var(--mui-border-radius);
+  border: 1px solid var(--scheibel-taupe);
+  font-size: var(--mui-font-size-body2);
+  font-family: var(--mui-font-family);
+  min-width: 160px;
+  background: var(--mui-background-paper);
+  cursor: pointer;
+  color: var(--mui-text-primary);
+}
+
+.filter-group select:hover {
+  border-color: var(--scheibel-olive);
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--scheibel-olive);
+}
+
+/* Button (MUI OutlinedButton style) */
+.btn {
+  height: 40px;
+  padding: 0 var(--mui-spacing-2);
+  border-radius: var(--mui-border-radius);
+  font-size: var(--mui-font-size-body2);
+  font-weight: var(--mui-font-weight-medium);
+  font-family: var(--mui-font-family);
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mui-spacing-1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn .btn-icon,
+.btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--scheibel-olive);
+  border: 1px solid var(--scheibel-taupe);
+}
+
+.btn-secondary:hover {
+  background: var(--mui-action-hover);
+  border-color: var(--scheibel-olive);
+}
+
+a.btn {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+/* Table (MUI Table style) */
+.table-section {
+  position: relative;
+  background: var(--mui-background-paper);
+  border-radius: var(--mui-border-radius);
+  box-shadow: var(--mui-elevation-2);
+  overflow: hidden;
+}
+
+.table-container {
+  overflow-x: auto;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--mui-font-size-body2);
+}
+
+.data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--scheibel-light);
+}
+
+.data-table th {
+  padding: var(--mui-spacing-2);
+  text-align: left;
+  font-weight: var(--mui-font-weight-medium);
+  font-size: var(--mui-font-size-caption);
+  color: var(--mui-text-secondary);
+  letter-spacing: 0.03333em;
+  border-bottom: 1px solid var(--mui-divider);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: var(--mui-spacing-2);
+  border-bottom: 1px solid var(--mui-divider);
+}
+
+.data-table tbody tr:hover {
+  background: var(--mui-action-hover);
+}
+
+.data-table tbody tr.loading-row td {
+  text-align: center;
+  color: var(--mui-text-secondary);
+  padding: var(--mui-spacing-4);
+}
+
+/* Chip/Badge (MUI Chip style) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: var(--mui-font-size-caption);
+  font-weight: var(--mui-font-weight-medium);
+  letter-spacing: 0.03333em;
+}
+
+.badge-pending {
+  background: rgba(169, 168, 136, 0.3);
+  color: var(--scheibel-olive);
+}
+
+.badge-sent {
+  background: rgba(69, 73, 52, 0.2);
+  color: var(--scheibel-dark);
+}
+
+/* Empty state */
+.empty-state {
+  padding: var(--mui-spacing-4);
+  text-align: center;
+  color: var(--mui-text-secondary);
+}
+
+.empty-state .empty-state-icon,
+.empty-state img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--mui-spacing-2);
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-weight: var(--mui-font-weight-medium);
+  font-size: var(--mui-font-size-body1);
+  color: var(--mui-text-primary);
+  margin-bottom: var(--mui-spacing-1);
+}
+
+.empty-state span {
+  font-size: var(--mui-font-size-body2);
+}
+
+/* UUID cell */
+.uuid-cell {
+  font-family: "Roboto Mono", "Monaco", "Consolas", monospace;
+  font-size: 0.8125rem;
+}

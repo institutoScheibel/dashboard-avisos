@@ -1,0 +1,10 @@
+{
+  "name": "dashboard-avisos-enfermeira",
+  "version": "1.0.0",
+  "description": "Dashboard visual para pacientes que atingiram dias de notificação",
+  "scripts": {
+    "prestart": "node scripts/generate-config.js",
+    "start": "npx serve -p 3333",
+    "build": "node scripts/generate-config.js"
+  }
+}

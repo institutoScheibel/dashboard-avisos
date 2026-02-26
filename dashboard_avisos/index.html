@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Avisos Enfermeira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <img src="icons/INSTITUTO SCHEIBEL - Logotipo_Vertical 02.png" alt="Instituto Scheibel" class="header-logo" aria-hidden="true">
+      <h1>Dashboard - Avisos Pós-Operatório</h1>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-total">
+          <img src="icons/circle-phone_8034657.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="stat-content">
+          <span class="stat-value" id="stat-total">0</span>
+          <span class="stat-label">Total de registros</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-pending">
+          <img src="icons/hourglass-start_9586236.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="stat-content">
+          <span class="stat-value" id="stat-pending">0</span>
+          <span class="stat-label">Pendentes</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon stat-icon-sent">
+          <img src="icons/completed_13794315.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="stat-content">
+          <span class="stat-value" id="stat-sent">0</span>
+          <span class="stat-label">Enviados</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="filters-bar">
+      <div class="filter-group">
+        <label for="filter-status">Status</label>
+        <select id="filter-status">
+          <option value="">Todos</option>
+          <option value="nao_enviado">Pendente</option>
+          <option value="enviado">Enviado</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-dias">Marco (dias)</label>
+        <select id="filter-dias">
+          <option value="">Todos</option>
+          <option value="15">15 dias</option>
+          <option value="25">25 dias</option>
+          <option value="60">60 dias</option>
+          <option value="90">90 dias</option>
+          <option value="180">180 dias</option>
+          <option value="365">365 dias</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-order">Ordenar por</label>
+        <select id="filter-order">
+          <option value="criado_em-desc">Data criação (mais recente)</option>
+          <option value="criado_em-asc">Data criação (mais antigo)</option>
+          <option value="enviado_em-desc">Data envio (mais recente)</option>
+          <option value="enviado_em-asc">Data envio (mais antigo)</option>
+          <option value="dias-asc">Dias (menor primeiro)</option>
+          <option value="dias-desc">Dias (maior primeiro)</option>
+        </select>
+      </div>
+      <a href="https://clinicaexperts.com.br/" class="btn btn-secondary btn-clinica" target="_blank" rel="noopener noreferrer">
+        <img src="icons/link-alt_7931189.svg" alt="" class="btn-icon" aria-hidden="true">
+        Clinica Experts
+      </a>
+      <button type="button" class="btn btn-secondary" id="btn-clear-filters">
+        <img src="icons/hourglass-start_9586236.svg" alt="" class="btn-icon" aria-hidden="true">
+        Limpar filtros
+      </button>
+    </section>
+
+    <section class="table-section">
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Paciente (UUID)</th>
+              <th>Email</th>
+              <th>Marco</th>
+              <th>Status</th>
+              <th>Enviado em</th>
+              <th>Criado em</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr class="loading-row">
+              <td colspan="6">Carregando...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <img src="icons/circle-phone_8034657.svg" alt="" class="empty-state-icon" aria-hidden="true">
+        <p>Nenhum registro encontrado.</p>
+        <span>Execute o workflow automacao_avisos_enfermeira ou ajuste os filtros.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
