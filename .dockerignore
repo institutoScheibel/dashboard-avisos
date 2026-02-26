@@ -6,3 +6,5 @@ config.js
 n8n
 *.md
 DEPLOY_EASYPANEL.txt
+logo-base64.txt
+*.log

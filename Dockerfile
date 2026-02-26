@@ -1,12 +1,11 @@
-FROM node:20-alpine
+FROM node:20-slim
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --production
+RUN npm install --omit=dev --no-audit
 
 COPY . .
-RUN npm run build
 
 EXPOSE 3333
 CMD ["npm", "run", "start"]
