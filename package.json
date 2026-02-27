@@ -4,7 +4,7 @@
   "description": "Dashboard visual para pacientes que atingiram dias de notificação",
   "scripts": {
     "prestart": "node scripts/generate-config.js",
-    "start": "serve -p 3333",
+    "start": "serve -l 0.0.0.0:3333",
     "build": "node scripts/generate-config.js"
   },
   "dependencies": {
