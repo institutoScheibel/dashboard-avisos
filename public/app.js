@@ -1,7 +1,3 @@
-const { createClient } = supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-const TABLE_NAME = 'aviso_paciente';
 const MARCOS = ['15', '25', '60', '90', '180', '365'];
 
 let allData = [];
@@ -120,17 +116,16 @@ async function fetchData() {
   elements.tableBody.innerHTML = '<tr class="loading-row"><td colspan="6">Carregando...</td></tr>';
   elements.emptyState.style.display = 'none';
 
-  const { data, error } = await supabaseClient
-    .from(TABLE_NAME)
-    .select('*')
-    .order('criado_em', { ascending: false });
-
-  if (error) {
-    elements.tableBody.innerHTML = `<tr class="loading-row"><td colspan="6">Erro: ${error.message}</td></tr>`;
+  try {
+    const res = await fetch('/api/avisos');
+    if (!res.ok) throw new Error(await res.text());
+    const data = await res.json();
+    allData = data || [];
+  } catch (err) {
+    elements.tableBody.innerHTML = `<tr class="loading-row"><td colspan="6">Erro: ${err.message}</td></tr>`;
     return;
   }
 
-  allData = data || [];
   applyFilters();
 }
 
